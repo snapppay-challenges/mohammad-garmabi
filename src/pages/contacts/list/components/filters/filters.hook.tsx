@@ -1,7 +1,8 @@
+import { TextFieldProps } from '@mui/material';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { IPassengerRequestAction } from '@/apis/dto/passenger';
-import { TextFieldProps } from '@mui/material';
 import { usePassengerStore } from '@/stores/usePassengerStore';
+import React from 'react';
 
 type FilterForm = IPassengerRequestAction['where'];
 
@@ -23,6 +24,7 @@ const useFilterLogical = () => {
       inputMode: 'numeric',
       onInput: (e: React.FormEvent<HTMLInputElement>) => {
         const target = e.target as HTMLInputElement;
+        // eslint-disable-next-line prefer-destructuring
         const value = target.value;
         const newValue = value.replace(/[^0-9]/g, '');
         target.value = newValue;

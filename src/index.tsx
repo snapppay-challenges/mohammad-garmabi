@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import '@/assets/fonts/index.css';
+import './assets/fonts/index.css';
 import reportWebVitals from './reportWebVitals';
 import TanstackProvider from './providers/tanstack-provider';
 import SnackbarAppProvider from './providers/snackbar-app-provider';

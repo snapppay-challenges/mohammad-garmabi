@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import themeOptions from '@/theme';
@@ -6,9 +5,10 @@ import themeOptions from '@/theme';
 // import rtlPlugin from "stylis-plugin-rtl";
 import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
+import React from 'react';
 
 export default function AppThemeProvider({ children }: { children: React.ReactNode }) {
-  const theme = useMemo(() => createTheme(themeOptions), []);
+  const theme = React.useMemo(() => createTheme(themeOptions), []);
   //
   // useEffect(() => {
   //   document.dir = "rtl";

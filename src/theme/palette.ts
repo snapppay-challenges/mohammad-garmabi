@@ -24,9 +24,9 @@ declare module '@mui/material/styles/createPalette' {
   interface TypeBackground {
     neutral: string;
   }
-  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface SimplePaletteColorOptions extends Partial<CustomPaletteOption> {}
-  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface PaletteColor extends Partial<CustomPaletteOption> {}
 }
 

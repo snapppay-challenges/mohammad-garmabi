@@ -3,11 +3,11 @@ import { Controller } from 'react-hook-form';
 import useFilterLogical from './filters.hook';
 
 const FilterSection = () => {
-  const { control, formFields, formFieldsNames, handleReset, handleSubmit, onSubmit } =
+  const { formFields, formFieldsNames, handleReset, handleSubmit, onSubmit, control } =
     useFilterLogical();
 
   return (
-    <Stack component={'form'} direction="row" onSubmit={handleSubmit(onSubmit)}>
+    <Stack component="form" direction="row" onSubmit={handleSubmit(onSubmit)}>
       <Stack
         direction={{
           xs: 'column',

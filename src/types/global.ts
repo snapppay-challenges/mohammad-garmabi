@@ -9,3 +9,5 @@ interface IGeneralResponse<T = unknown> {
   meta: Meta;
   items: T;
 }
+
+export type { IGeneralResponse };

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useGetPassenger } from '@/hooks/queries/usePassengerQueries';
 import useCustomMediaQuery from '@/hooks/useCustomMediaQuery';
 import { usePassengerStore } from '@/stores/usePassengerStore';

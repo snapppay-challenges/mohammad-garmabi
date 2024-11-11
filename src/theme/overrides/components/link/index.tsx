@@ -17,7 +17,7 @@ export default function MuiLink(): MuiLinkComponentStyle {
           fontWeight: 'bold',
         },
         '&:hover': {
-          color: theme.palette.primary['light'],
+          color: theme.palette.primary.light,
           fontWeight: 500,
         },
         '&[disabled]': {

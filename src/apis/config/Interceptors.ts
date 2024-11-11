@@ -5,10 +5,10 @@ export const requestInterceptor = {
   onFulfilled: (config: InternalAxiosRequestConfig) => {
     // Add signal to cancel request after 50 seconds
     const controller = new AbortController();
-    config.signal = controller.signal;
+    const newConfig = { ...config, signal: controller.signal };
     setTimeout(() => controller.abort(), Number(process.env.REACT_APP_REQUEST_TIMEOUT));
 
-    return config;
+    return newConfig;
   },
   onRejected: (error: AxiosError) => {
     // Do something with request error

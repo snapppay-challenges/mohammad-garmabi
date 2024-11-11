@@ -1,12 +1,12 @@
-import paths from '@/routes/paths';
 import { useNavigate } from 'react-router-dom';
+import paths from '@/routes/paths';
 import { PassengerCardProps } from './passenger-card.types';
 
 const usePassengerCardLogical = (props: PassengerCardProps) => {
   const navigate = useNavigate();
 
   const handleNavigateToDetails = () => {
-    navigate(paths['contactID'](String(props.id)));
+    navigate(paths.contactID(String(props.id)));
   };
 
   const handleNavigateToTelegram = () => {

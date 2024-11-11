@@ -1,14 +1,14 @@
-import paths from '@/routes/paths';
 import { Link, Stack } from '@mui/material';
 import { Cards, Home } from 'iconsax-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import paths from '@/routes/paths';
 
 const headerMenu = [
-  { label: 'Contacts', route: paths['contacts'](), icon: <Home /> },
+  { label: 'Contacts', route: paths.contacts(), icon: <Home /> },
   {
     label: 'Page for test',
-    route: paths['notFound'](),
+    route: paths.notFound(),
     icon: <Cards />,
   },
 ];

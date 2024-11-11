@@ -1,3 +1,4 @@
+import { validateParams } from 'url-validation-query';
 import apis from '@/apis';
 import endpoints from '@/apis/config/endpoints';
 import {
@@ -5,7 +6,7 @@ import {
   IPassengerRequestAction,
   IPassengerResponseAction,
 } from '@/apis/dto/passenger';
-import { validateParams } from 'url-validation-query';
+import { IGeneralResponse } from '@/types/global';
 
 const passengerController = {
   // get all

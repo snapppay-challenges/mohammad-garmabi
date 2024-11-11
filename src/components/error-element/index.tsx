@@ -39,7 +39,7 @@ export default function ErrorElement() {
           variant="contained"
           onClick={() =>
             navigate({
-              pathname: paths['contacts'](),
+              pathname: paths.contacts(),
             })
           }
           sx={{ mt: 3 }}

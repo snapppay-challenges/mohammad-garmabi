@@ -1,11 +1,11 @@
-import Header from '@/components/header';
 import { Stack } from '@mui/material';
 import { Outlet } from 'react-router-dom';
+import Header from '@/components/header';
 
 const MainLayout = () => {
   return (
     <Stack
-      component={'main'}
+      component="main"
       justifyContent="space-between"
       sx={{
         bgcolor: ({ palette }) => palette.grey['200'],

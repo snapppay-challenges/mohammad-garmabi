@@ -1,10 +1,10 @@
-import React, { PropsWithChildren, useMemo } from 'react';
+import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-const TanstackProvider: React.FC<PropsWithChildren> = ({ children }) => {
+const TanstackProvider = ({ children }: { children: React.ReactNode }) => {
   // Create a client
-  const queryClient = useMemo(() => {
+  const queryClient = React.useMemo(() => {
     return new QueryClient({
       defaultOptions: {
         queries: {

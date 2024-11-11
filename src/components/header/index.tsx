@@ -1,17 +1,17 @@
 import { AppBar, Box, Toolbar, IconButton, Typography, Link, darken } from '@mui/material';
-import { useEffect, useState } from 'react';
-import ContainerLayout from '@/layout/container';
-import paths from '@/routes/paths';
 import { NavLink, useLocation } from 'react-router-dom';
 import { CloseCircle, HambergerMenu, ShoppingBag, TriangleLogo } from 'iconsax-react';
+import React from 'react';
+import ContainerLayout from '@/layout/container';
+import paths from '@/routes/paths';
 import DrawerMenu from './drawer';
 import MenuList from './menu-list';
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
   const { pathname } = useLocation();
 
-  useEffect(() => {
+  React.useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
@@ -32,7 +32,7 @@ const Header = () => {
     >
       <ContainerLayout maxWidth="xl">
         <Toolbar disableGutters>
-          <Link component={NavLink} to={paths['contacts']()}>
+          <Link component={NavLink} to={paths.contacts()}>
             <Typography
               variant="h6"
               noWrap

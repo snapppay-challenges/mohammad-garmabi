@@ -13,7 +13,7 @@ const themeOptions: Theme = createTheme(
     //
     components: componentsOverrides(),
     //
-    direction: 'ltr', //"rtl",
+    direction: 'ltr',
   }
   // {
   //   faIR,

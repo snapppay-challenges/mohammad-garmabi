@@ -3,7 +3,7 @@ import { useGetByIdPassenger } from '@/hooks/queries/usePassengerQueries';
 import { usePassengerStore } from '@/stores/usePassengerStore';
 import { Link } from '@mui/material';
 import { Eye, Map1, Timer1, UserTick } from 'iconsax-react';
-import { useEffect, useMemo } from 'react';
+import React from 'react';
 import { useNavigationType, useParams } from 'react-router-dom';
 
 const useContactDetailLogical = () => {
@@ -12,11 +12,11 @@ const useContactDetailLogical = () => {
   const navigateType = useNavigationType() as 'POP' | 'PUSH';
   const { id } = useParams();
 
-  const viewCount = useMemo(() => {
+  const viewCount = React.useMemo(() => {
     return mostViewList.find((item) => item.id === data?.id)?.count;
   }, [mostViewList, data]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (navigateType === 'PUSH') {
       if (id) {
         setMostViewList(+id);
@@ -24,7 +24,7 @@ const useContactDetailLogical = () => {
     }
   }, [id, setMostViewList, navigateType]);
 
-  const renderDetails = useMemo(() => {
+  const renderDetails = React.useMemo(() => {
     return [
       {
         title: 'Gender:',

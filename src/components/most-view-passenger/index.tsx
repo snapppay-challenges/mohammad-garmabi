@@ -9,7 +9,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import React, { useMemo } from 'react';
+import React from 'react';
 import PassengerCard from '../passenger-card';
 import { useGetPassenger } from '@/hooks/queries/usePassengerQueries';
 import { usePassengerStore } from '@/stores/usePassengerStore';
@@ -19,7 +19,7 @@ const PapularPassenger = () => {
   const { data } = useGetPassenger();
   const { mostViewList, clearHistoryView } = usePassengerStore();
   //
-  const sortedPassengersByViewCount = useMemo(() => {
+  const sortedPassengersByViewCount = React.useMemo(() => {
     return data?.items
       .filter((item) => mostViewList.some((view) => view.id === item.id))
       .sort((a, b) => {
