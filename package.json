@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@craco/craco": "^7.1.0",
@@ -42,6 +42,7 @@
     "build": "craco build",
     "test": "craco test",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prettify": "prettier --write ./src"
   },
   "eslintConfig": {
@@ -77,5 +78,6 @@
     "globals": "^15.12.0",
     "prettier": "^3.3.3",
     "typescript-eslint": "^8.13.0"
-  }
+  },
+  "packageManager": "pnpm@9.12.2"
 }
