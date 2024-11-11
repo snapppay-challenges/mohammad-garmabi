@@ -72,7 +72,7 @@ The following scripts are defined in `package.json`:
 
 A typical structure for this project may look like this:
 
-
+```
 frontend-project/
 ├── public/             # Static files
 ├── src/                # Source code
@@ -96,7 +96,7 @@ frontend-project/
 ├── .prettierrc        # Prettier configuration
 ├── package.json        # Project dependencies and scripts
 └── README.md          # Project documentation
-
+```
 
 ### Code Quality Tools
 
