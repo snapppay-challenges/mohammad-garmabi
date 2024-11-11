@@ -108,7 +108,7 @@ The project uses ESLint for maintaining code quality and enforcing consistent co
 - **Import Rules**: Organizing and validating imports
 - **Best Practices**: Enforcing JavaScript/TypeScript best practices
 
-
+```
 export default tseslint.config(
   { ignores: ['dist', 'public', 'node_modules'] },
   {
@@ -131,12 +131,12 @@ export default tseslint.config(
     },
   }
 );
-
+```
 
 #### Prettier Configuration
 Prettier is configured to maintain consistent code formatting across the project. Our Prettier settings include:
 
-
+```
 {
    "semi": true,
   "tabWidth": 2,
@@ -146,7 +146,7 @@ Prettier is configured to maintain consistent code formatting across the project
   "bracketSpacing": true,
   "endOfLine": "auto"
 }
-
+```
 
 These tools can be run using:
 - `pnpm lint`: Runs ESLint to check for code quality issues
