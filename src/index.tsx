@@ -1,16 +1,20 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import '@/assets/fonts/index.css';
 import reportWebVitals from './reportWebVitals';
+import TanstackProvider from './providers/tanstack-provider';
+import SnackbarAppProvider from './providers/snackbar-app-provider';
+import AppThemeProvider from './providers/app-theme-provider';
+import AppRouterProvider from './providers/app-router-provider';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <TanstackProvider>
+    <AppThemeProvider>
+      <SnackbarAppProvider>
+        <AppRouterProvider />
+      </SnackbarAppProvider>
+    </AppThemeProvider>
+  </TanstackProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
