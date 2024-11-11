@@ -109,28 +109,69 @@ The project uses ESLint for maintaining code quality and enforcing consistent co
 - **Best Practices**: Enforcing JavaScript/TypeScript best practices
 
 ```
-export default tseslint.config(
-  { ignores: ['dist', 'public', 'node_modules'] },
-  {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ['**/*.{ts,tsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  settings: {
+    react: {
+      version: 'detect',
     },
-    plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-    },
-    rules: {
-      ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-      'no-console': ['error', { allow: ['warn', 'error'] }],
-      'no-unused-vars': 'error',
-      '@typescript-eslint/no-unused-vars': 'error',
-    },
-  }
-);
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:react/jsx-runtime',
+    'airbnb',
+    'airbnb/hooks',
+    'plugin:jsx-a11y/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+    'prettier',
+  ],
+  ignorePatterns: ['build', '.eslintrc.cjs'],
+
+  parser: '@typescript-eslint/parser',
+  plugins: ['react-refresh', '@typescript-eslint', 'prettier'],
+  rules: {
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    '@typescript-eslint/no-explicit-any': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
+    'react/jsx-props-no-spreading': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    'react/function-component-definition': 'off',
+    'react/require-default-props': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@next/next/no-img-element': 'off',
+    'import/no-unresolved': ['error', { ignore: ['^@/'] }],
+    'import/no-cycle': 'off',
+    'import/extensions': 'off',
+    'import/order': 'warn',
+    'max-len': 'off',
+    'class-methods-use-this': 'off',
+    'linebreak-style': 'off',
+    'eol-last': 'off',
+    'object-curly-newline': 'off',
+    camelcase: 'off',
+    'no-shadow': 'off',
+    'no-plusplus': 'off',
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
+    'import/prefer-default-export': 'off',
+    'arrow-body-style': 'off',
+    'no-prototype-builtins': 'off',
+  },
+};
+
 ```
 
 #### Prettier Configuration
