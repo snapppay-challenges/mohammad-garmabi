@@ -34,23 +34,19 @@ This project is a web application designed to provide a robust, interactive fron
 ### Installation
 
 1. Clone the repository:
-   
-    git clone https://github.com/mohammadgarmabi/Snapp-Code-Challenge.git
-    cd Snapp-Code-Challenge
-   
+
+   git clone https://github.com/mohammadgarmabi/Snapp-Code-Challenge.git
+   cd Snapp-Code-Challenge
 
 2. Install dependencies:
-   
-    pnpm install
-   
+
+   pnpm install
 
 ### Usage
 
 To start the development server, use:
 
-
 pnpm start
-
 
 This will launch the app locally, typically at `http://localhost:3000`.
 
@@ -83,7 +79,7 @@ frontend-project/
 │   │    └── index.ts    # Initial axios configuration
 │   ├── components/     # Reusable components
 │   ├── constants/      # Global constants
-│   ├── hooks/          # Includes the react query hook and custom hook 
+│   ├── hooks/          # Includes the react query hook and custom hook
 │   ├── layout/         # Layout components
 │   ├── pages/          # Page components
 │   ├── providers/      # Wrap providers here (e.g., react query provider and theme provider and etc)
@@ -101,6 +97,7 @@ frontend-project/
 ### Code Quality Tools
 
 #### ESLint Configuration
+
 The project uses ESLint for maintaining code quality and enforcing consistent coding patterns. Our ESLint configuration includes:
 
 - **TypeScript Support**: Extended configuration for TypeScript
@@ -175,6 +172,7 @@ module.exports = {
 ```
 
 #### Prettier Configuration
+
 Prettier is configured to maintain consistent code formatting across the project. Our Prettier settings include:
 
 ```
@@ -190,6 +188,7 @@ Prettier is configured to maintain consistent code formatting across the project
 ```
 
 These tools can be run using:
+
 - `pnpm lint`: Runs ESLint to check for code quality issues
 - `pnpm lint:fix`: Automatically fixes ESLint issues where possible
 - `pnpm prettify`: Formats all files using Prettier
@@ -202,34 +201,54 @@ These tools can be run using:
 ### Code review checklist
 
 - [ ] Main functionalities: These items SHOULD work correctly
-    - [ ] List view
-        - [ ] Show list of contacts properly with image, name, and tel and be clickable
-        - [ ] Handle server errors
-    - [ ] Pagination
-        - [ ] Infinite scroll/page number button
-        - [ ] Handle loading and end of the list
-    - [ ] Detail view
-        - [ ] Handle routing properly
-        - [ ] Handle server errors
-        - [ ] Handle routing error on manually changing the detail id
-    - [ ] Search
-        - [ ] Using Debounce
-        - [ ] Handle multiple requests
-        - [ ] Search by first name, last name, and telephone
-    - [ ] Most visited contacts
-        - [ ] Handle incorrect items in the list (e.g., when you manually change the detail page address)
+  - [x] List view
+    - [x] Show list of contacts properly with image, name, and tel and be clickable
+    - [x] Handle server errors
+  - [ ] Pagination
+    - [x] Infinite scroll/page number button
+    - [ ] Handle loading and end of the list
+  - [x] Detail view
+    - [x] Handle routing properly
+    - [x] Handle server errors
+    - [x] Handle routing error on manually changing the detail id
+  - [ ] Search
+    - [x] Using Debounce
+    - [ ] Handle multiple requests
+    - [x] Search by first name, last name, and telephone
+  - [x] Most visited contacts
+    - [x] Handle incorrect items in the list (e.g., when you manually change the detail page address)
 - [ ] Clean code:
-    - [ ] Well-structured project
-    - [ ] Separate concerns
-    - [ ] Component-thinking
-    - [ ] Simple to understand and less complexity
-    - [ ] No over-engineering
-    - [ ] Avoid bad-practice patterns (e.g., multi re-rendering components, useEffect chaining)
-    - [ ] No acute performance issues
-    - [ ] Using pure CSS in a good way / Using CSS frameworks like Tailwind without extra complexity
+  - [x] Well-structured project
+  - [x] Separate concerns
+  - [x] Component-thinking
+  - [x] Simple to understand and less complexity
+  - [x] No over-engineering
+  - [x] Avoid bad-practice patterns (e.g., multi re-rendering components, useEffect chaining)
+  - [x] No acute performance issues
+  - [ ] Using pure CSS in a good way / Using CSS frameworks like Tailwind without extra complexity
 - [ ] Plus points and nice to have: DON’T judge just based on lack of these items; they should be better compared to other competitors:
-    - [ ] Creativity or eye-catching design
-    - [ ] Using absolute path
-    - [ ] Using ESLint
-    - [ ] Using TypeScript in a best practice way (otherwise is a negative point)
-    - [ ] Using (unit/e2e) Test in an applicable way not just writing some samples
+  - [x] Creativity or eye-catching design
+  - [x] Using absolute path
+  - [x] Using ESLint
+  - [x] Using TypeScript in a best practice way (otherwise is a negative point)
+  - [ ] Using (unit/e2e) Test in an applicable way not just writing some samples
+
+### Reviews
+
+- #### Ali BM
+  - ##### Pros
+    - Eye catching design
+    - Good file and folder structure (In most cases)
+    - Good typescript knowledge
+    - Written debounce by himself
+    - Good separation of concerns
+  - ##### Cons
+    - Wrong frequently visited contacts approach
+    - Send wrong filter query to the server
+    - Frequently visited contacts order update is totally wrong (Try to revisit a contact from most viewed section)
+    - No need to use `React.children.toArray` and `React.cloneElement` in `src/pages/contacts/detail/index.tsx`
+    - `src/pages/contacts/list/components/filters/filters.hook.tsx` What is the point of this naming convention?
+    - Why do we need to memoize router (`src/providers/app-router-provider.tsx`)? Also for query provider (`src/providers/tanstack-provider.tsx`)
+    - Why do we need count for frequently visited contact (`src/stores/usePassengerStore/index.ts`)?
+  - ##### Conclusion
+    - I am 70% okay with him for mid-level position. He should be challenged in the next step to fix and refactor issues in codebase.
