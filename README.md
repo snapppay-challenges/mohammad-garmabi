@@ -252,3 +252,20 @@ These tools can be run using:
     - Why do we need count for frequently visited contact (`src/stores/usePassengerStore/index.ts`)?
   - ##### Conclusion
     - I am 70% okay with him for mid-level position. He should be challenged in the next step to fix and refactor issues in codebase.
+   
+
+## Farshad 
+
+- Eye catching design
+- Unused comments in codebase
+- I think it would have been better to define variable above JSX instead of writing it in JSX, duplicate conditions in JSX!
+- ????? `data?.items
+      .filter((item) => mostViewList.some((view) => view.id === item.id))
+      .sort((a, b) => {
+        const aViewCount = mostViewList.find((view) => view.id === a.id)?.count || 0;
+        const bViewCount = mostViewList.find((view) => view.id === b.id)?.count || 0;
+        return bViewCount - aViewCount;`
+- frequently visited bad working when change page 
+- search not working, last name not implemented 
+
+I think he is rejected.
